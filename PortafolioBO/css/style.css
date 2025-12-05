@@ -1,0 +1,198 @@
+/* ---------------- GLOBAL ---------------- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+
+:root{
+    --bg:#0f1724;
+    --accent:#0ea5ff;
+    --accent-2:#7c3aed;
+    --muted:#9aa4b2;
+    --card:#071022;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Inter,sans-serif;
+    background:var(--bg);
+    color:#e6eef8;
+    line-height:1.6;
+}
+
+/* ---------------- HEADER ---------------- */
+header{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    background:linear-gradient(135deg,var(--accent),var(--accent-2));
+    color:white;
+    padding:0 20px;
+}
+
+nav{
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 40px;
+    position:absolute;
+    top:0; left:0;
+}
+
+nav .logo{
+    font-weight:800;
+    font-size:24px;
+}
+
+nav .menu{
+    display:flex;
+    gap:20px;
+    list-style:none;
+}
+
+nav .menu a{
+    text-decoration:none;
+    color:white;
+    font-weight:500;
+    transition:0.3s;
+}
+
+nav .menu a:hover{
+    color:yellow;
+}
+
+.hero h1{
+    font-size:3rem;
+    margin-bottom:10px;
+}
+
+.hero p{
+    font-size:1.2rem;
+}
+
+/* ---------------- SECCIONES ---------------- */
+section{
+    padding:80px 20px;
+    max-width:1200px;
+    margin:0 auto;
+}
+
+section h2{
+    font-size:2rem;
+    margin-bottom:20px;
+    text-align:center;
+    color:var(--accent);
+}
+
+section p{
+    text-align:center;
+    color:var(--muted);
+    max-width:800px;
+    margin:0 auto;
+}
+
+/* ---------------- GRID DE PROYECTOS ---------------- */
+.projects-grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    gap:24px;
+    margin-top:40px;
+}
+
+.project-card{
+    background:var(--card);
+    border-radius:12px;
+    padding:20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    overflow:hidden;
+    cursor:pointer;
+    display:flex;
+    flex-direction:column;
+    border:1px solid rgba(255,255,255,0.05);
+}
+
+.project-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 12px 30px rgba(0,0,0,0.5);
+}
+
+/* ---------------- IMAGEN DEL PROYECTO ---------------- */
+.project-img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+    border-radius:10px;
+    margin-bottom:15px;
+}
+
+/* ---------------- INFO DEL PROYECTO ---------------- */
+.project-info{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.project-card h3{
+    color:var(--accent);
+    font-size:1.3rem;
+}
+
+.project-card p{
+    color:var(--muted);
+    font-size:0.9rem;
+}
+
+/* ---------------- TECNOLOGÍAS ---------------- */
+.tech{
+    color:var(--muted);
+    font-size:0.9rem;
+    margin-top:5px;
+}
+
+/* ---------------- BOTÓN DEL REPO ---------------- */
+.repo-btn{
+    display:inline-block;
+    background:var(--accent);
+    color:white;
+    padding:10px 12px;
+    border-radius:8px;
+    text-align:center;
+    text-decoration:none;
+    font-weight:600;
+    transition:0.3s;
+    margin-top:10px;
+}
+
+.repo-btn:hover{
+    background:var(--accent-2);
+}
+
+/* ---------------- FOOTER ---------------- */
+footer{
+    text-align:center;
+    padding:20px;
+    background:#081226;
+    color:var(--muted);
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+@media(max-width:768px){
+    nav{
+        flex-direction:column;
+        gap:10px;
+    }
+
+    .hero h1{
+        font-size:2rem;
+    }
+
+    .hero p{
+        font-size:1rem;
+    }
+}
