@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BackOffice - Login</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="centered">
+    <div class="card-auth">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+        <div>
+          <div style="font-weight:800;color:var(--accent);font-size:18px">BackOffice</div>
+          <div style="color:var(--muted);font-size:13px">Inicia sesión para continuar</div>
+        </div>
+        <div style="font-size:12px;color:var(--muted)">v1.0</div>
+      </div>
+
+      <h2>Bienvenido de nuevo</h2>
+
+      <form id="loginForm" onsubmit="loginUser(event)">
+        <div class="input-group">
+          <input id="email" type="email" placeholder="Correo electrónico" required>
+        </div>
+        <div class="input-group">
+          <input id="password" type="password" placeholder="Contraseña" required>
+        </div>
+
+        <div class="auth-actions">
+          <a class="link-muted" href="register.html">¿No tienes cuenta? Regístrate</a>
+          <button class="btn-primary" type="submit">Entrar</button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <script src="js/auth.js"></script>
+</body>
+</html>

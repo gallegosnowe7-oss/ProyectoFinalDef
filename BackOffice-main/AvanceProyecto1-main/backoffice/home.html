@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BackOffice - Home</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="logo">BB</div>
+        <div>
+          <div style="font-weight:700">BackOffice</div>
+          <div style="font-size:12px;color:var(--muted)">Gestión de proyectos</div>
+        </div>
+      </div>
+
+      <nav>
+        <div class="nav-link active">Dashboard</div>
+        <div class="nav-link">Proyectos</div>
+        <div class="nav-link">Usuarios</div>
+        <div class="nav-link">Configuración</div>
+      </nav>
+
+      <div style="position:absolute;bottom:20px;left:20px;right:20px">
+        <div style="font-size:12px;color:var(--muted);margin-bottom:8px">Perfil</div>
+        <div style="display:flex;gap:10px;align-items:center">
+          <div class="avatar">R</div>
+          <div style="flex:1">
+            <div style="font-weight:700;color:#eaf6ff">Roberto</div>
+            <div style="font-size:13px;color:var(--muted)">gallegosnowe7@gmail.com</div>
+          </div>
+          <button id="logoutBtn" class="logout-btn">Salir</button>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="topbar">
+        <div class="page-title">Mis Proyectos</div>
+        <div class="topbar-actions">
+          <div class="profile">
+            <div style="text-align:right;margin-right:8px">
+              <div style="font-weight:700">Roberto</div>
+              <div style="font-size:12px;color:var(--muted)">Admin</div>
+            </div>
+            <div class="avatar">R</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <h2>Proyectos actuales</h2>
+        <div class="actions">
+          <button id="openModal" class="btn-primary">+ Nuevo Proyecto</button>
+          <button class="btn-ghost" onclick="location.reload()">Actualizar</button>
+        </div>
+      </div>
+
+      <div class="grid">
+        <section class="panel">
+          <h3 style="margin:0;color:#cfeaff">Proyectos</h3>
+          <div id="projectsList" class="projects-grid"></div>
+        </section>
+
+        <aside class="side-panel">
+          <div class="stat">
+            <h4>Proyectos totales</h4>
+            <p id="statTotal">--</p>
+          </div>
+
+          <div class="stat">
+            <h4>Último proyecto</h4>
+            <p id="statLast">--</p>
+          </div>
+
+          <div class="stat">
+            <h4>Atajos</h4>
+            <div style="display:flex;flex-direction:column;gap:8px;margin-top:8px">
+              <button class="btn-primary" onclick="document.getElementById('openModal').click()">Crear proyecto</button>
+              <button class="btn-ghost" onclick="loadProjects()">Ver proyectos</button>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- MODAL -->
+  <div id="projectModal" class="modal hidden" aria-hidden="true">
+    <div class="modal-content">
+      <h3 id="modalTitle">Nuevo Proyecto</h3>
+
+      <form id="projectForm">
+        <input type="hidden" id="projectId">
+
+        <div class="form-group">
+          <label for="projectTitle">Título</label>
+          <input id="projectTitle" type="text" required>
+        </div>
+
+        <div class="form-group">
+          <label for="projectDescription">Descripción</label>
+          <textarea id="projectDescription" rows="3" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="projectTech">Tecnologías (separadas por comas)</label>
+          <input id="projectTech" type="text" placeholder="HTML, CSS, JS, Node.js">
+        </div>
+
+        <div class="form-group">
+          <label for="projectImages">Imágenes (URLs separadas por comas)</label>
+          <textarea id="projectImages" rows="3" placeholder="https://imagen1.png, https://imagen2.png"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="projectRepo">Repositorio</label>
+          <input id="projectRepo" type="url" placeholder="https://github.com/usuario/proyecto">
+        </div>
+
+        <div class="modal-buttons">
+          <button class="btn-ghost" type="button" id="closeModal">Cancelar</button>
+          <button class="btn-primary" type="submit">Guardar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/auth.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>

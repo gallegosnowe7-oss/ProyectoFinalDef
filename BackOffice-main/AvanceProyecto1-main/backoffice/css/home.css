@@ -1,0 +1,114 @@
+/* --- GENERAL --- */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f3f3f3;
+    color: #222;
+}
+
+/* --- HEADER --- */
+.header {
+    background: #222;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-primary, .btn-logout {
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.btn-primary {
+    background: #4a7cff;
+    color: white;
+}
+
+.btn-logout {
+    background: #ff5252;
+    color: white;
+}
+
+/* --- PROJECT CARDS --- */
+.projects-container {
+    max-width: 1100px;
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* CONTENEDOR UNIFICADO DE IMÁGENES */
+.image-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.project-img {
+    width: 160px;       
+    height: 160px;     
+    object-fit: cover;  
+    border-radius: 10px;
+    border: 2px solid #ddd;
+}
+
+/* --- MODAL --- */
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: 0.25s ease;
+}
+
+.modal.show {
+    opacity: 1;
+}
+
+.modal.hidden {
+    visibility: hidden;
+}
+
+.modal-content {
+    background: white;
+    padding: 25px;
+    width: 420px;
+    border-radius: 12px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+    position: relative;
+}
+
+.close {
+    font-size: 24px;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    margin-bottom: 15px;
+}
+
+.full {
+    width: 100%;
+}
